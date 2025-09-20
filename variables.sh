@@ -1,3 +1,3 @@
 #!/bin/bash
-
-read -s echo please enter your password:
+ echo please enter your password:
+read -s password::
