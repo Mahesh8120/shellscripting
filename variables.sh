@@ -9,3 +9,4 @@ sum=$((number1+number2))
 read -s password
 echo $password and $DATE ans $sum
 
+echo all variables passed $@
