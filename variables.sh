@@ -7,5 +7,5 @@ sum=$((number1+number2))
 
  echo please enter your password:
 read -s password
-echo $password and $DATE
+echo $password and $DATE ans $sum
 
