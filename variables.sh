@@ -10,3 +10,4 @@ read -s password
 echo $password and $DATE ans $sum
 
 echo all variables passed: $@
+echo script name : $0
