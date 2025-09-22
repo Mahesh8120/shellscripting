@@ -12,7 +12,7 @@ echo $password and $DATE ans $sum
 echo all variables passed: $@
 echo script name : $0
 echo current working Directory: $PWD
-echo user: $user
+echo user: $USER
 echo home directory: $HOME
 echo last command exit status: $?
 echo process id of current script: $$
