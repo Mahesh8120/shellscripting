@@ -19,7 +19,7 @@ else
   echo "you are root user"
 fi
 
-if [ $number % 2 ]; then
+if [ ($number % 2) ]; then
   echo "number is even"
 else
   echo "number is odd"
