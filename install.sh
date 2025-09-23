@@ -1,9 +1,9 @@
 #!/bin/bash
 
-r="e\[31m"
-g="e\[32m"
-y="e\[33m"
-n="e\[0m"
+r="\e[31m"
+g="\e[32m"
+y="\e[33m"
+n="\e[0m"
 
 userid=$(id -u)
 
