@@ -16,5 +16,3 @@ if ($userid - ne 0); then
 else
   echo "you are root user"
 fi
-
-#
