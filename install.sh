@@ -9,21 +9,17 @@ else
     echo "you are root user"
 fi 
 
+validate () {
+if [ $1 -ne 0 ]; then
+  echo "installing $2 failed"
+  exit 1
+else
+    echo "installing $2 success"
+fi
+}
 
 dnf install nginx -y 
-
-if [ $? -ne 0 ]; then
-  echo "installing nginx failed"
-  exit 1
-else
-    echo "installing nginx success"
-fi
+validate $? nginx
 
 dnf install mysql -y 
-
-if [ $? -ne 0 ]; then
-  echo "installing mysql failed"
-  exit 1
-else
-    echo "installing mysql success"
-fi
+validate $? nginx
