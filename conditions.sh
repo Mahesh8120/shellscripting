@@ -3,7 +3,9 @@
 number=$1
 
 if [ $number -lt 15 ]; then
-  echo "number is less than or equal to 15"
+  echo "number is less than  15"
+elif [ $number -eq 15 ]; then
+  echo "number is equal to 15"
 else
   echo "number is greater than 15"
 fi
