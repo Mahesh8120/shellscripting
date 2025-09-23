@@ -1,25 +1,26 @@
 #!/bin/bash
 
 r="\e[31m"
-g="\e[32m"
-y="\e[33m"
-n="\e[0m"
+G="\e[32m"
+Y="\e[33m"
+N="\e[0m"
+
 
 userid=$(id -u)
 
 if [ $userid -ne 0 ]; then
-  echo "$r error: run the script with root $n "
+  echo "$R error: run the script with root $N "
     exit 1
 else
-    echo " $g you are root user $n"
+    echo " $G you are root user $N"
 fi 
 
 validate () {
 if [ $1 -ne 0 ]; then
-  echo " $r installing $2 failed $n"
+  echo " $R installing $2 failed $N"
   exit 1
 else
-    echo " $g installing $2 success $n"
+    echo " $G installing $2 success $N"
 fi
 }
 
