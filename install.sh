@@ -8,5 +8,11 @@ if [ $userid -ne 0 ]; then
 else
     echo "you are root user"
 fi 
-
 dnf install nginx -y 
+
+if [ $? -ne 0 ]; then
+  echo "previos command failed"
+else
+    echo "previous command success"
+fi
+
