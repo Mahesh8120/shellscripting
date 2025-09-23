@@ -2,7 +2,7 @@
 
 number=$1
 
-if [$number le 15]; then
+if [$number -lt 15]; then
   echo "number is less than or equal to 15"
 else
   echo "number is greater than 15"
