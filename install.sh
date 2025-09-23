@@ -32,7 +32,7 @@ else
     echo -e " $Y nginx installed, Skipping $N"
 fi
 
-dnf list installed nginx
+dnf list installed mysql
   if [ $? -ne 0 ]; then
    dnf install mysql -y 
    validate $? mysql 
