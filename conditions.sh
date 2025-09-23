@@ -17,4 +17,4 @@ else
   echo "you are root user"
 fi
 
-if ($? -ne 0); then
+#
