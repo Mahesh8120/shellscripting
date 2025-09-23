@@ -24,8 +24,19 @@ else
 fi
 }
 
-dnf install nginx -y 
-validate $? nginx
+dnf list installed nginx
+  if [ $? -ne 0 ]; then
+    dnf install nginx -y 
+    validate $? nginx
+else
+    echo -e " $Y nginx installed, Skipping $N"
+fi
 
-dnf install mysql -y 
-validate $? nginx
+dnf list installed nginx
+  if [ $? -ne 0 ]; then
+   dnf install mysql -y 
+   validate $? mysql 
+else
+    echo -e " $Y mysql installed, Skipping $N"
+fi
+
