@@ -20,7 +20,7 @@ else
 fi
 
 if [ $(($number % 2)) -eq 0 ]; then
-  echo "number is even"
+  echo "$number is even"
 else
-  echo "number is odd"
+  echo "$number is odd"
 fi
