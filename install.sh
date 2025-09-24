@@ -8,6 +8,14 @@ N="\e[0m"
 
 userid=$(id -u)
 
+LOGS_FOLDER="var/log/shellscript"
+SCRIPT_NAME=$(echo $0 | cut -d "." -f1 )
+LOG_FILE=${LOGS_FOLDER}/${SCRIPT_NAME}.log
+DATE=$(date)
+
+mkdir -p $LOGS_FOLDER
+echo -e " $Y script started at : $DATE $N"
+
 if [ $userid -ne 0 ]; then
   echo -e "$R error: run the script with root $N "
     exit 1
@@ -17,7 +25,7 @@ fi
 
 validate () {
 if [ $1 -ne 0 ]; then
-  echo -e " $R installing $2 failed $N"
+  echo -e " $R installing $2 failed $N" &>> $LOG_FILE
   exit 1
 else
     echo -e " $G installing $2 success $N"
