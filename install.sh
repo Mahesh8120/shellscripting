@@ -15,7 +15,7 @@ DATE=$(date)
 
 mkdir -p $LOGS_FOLDER
 echo -e " $Y script started at : $DATE $N"
-
+# condition to check the user is root or not
 if [ $userid -ne 0 ]; then
   echo -e "$R error: run the script with root $N "
     exit 1
@@ -23,6 +23,7 @@ else
     echo -e " $G you are root user $N"
 fi 
 
+#function to check the status of last executed command
 validate () {
 if [ $1 -ne 0 ]; then
   echo -e " $R installing $2 failed $N" &>> $LOG_FILE
