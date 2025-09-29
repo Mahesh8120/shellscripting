@@ -34,7 +34,7 @@ else
    echo -e $y"nginx already installed"$n
 fi
 
-dnf list installed mysql
+dnf list installed mysql &>>$log_file
 if [ $? -ne 0 ]; then 
   dnf install mysql -y &>>$log_file
   validate $? mysql
