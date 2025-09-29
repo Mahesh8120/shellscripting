@@ -6,9 +6,10 @@ g='\e[32m'
 y='\e[33m'
 n='\e[0m'
 log_folder="var/log/shell-script"
-script_name="$(echo $0 | cut -d "." -f1)"
+script_name=$( echo $0 | cut -d "." -f1 )
 log_file="$log_folder/$script_name.log"
 
+mkdir -p $log_folder
 
 if [ $userid -ne 0 ]; then
   echo -e $r"error: run with root access"$n
@@ -18,7 +19,6 @@ else
 fi
 echo "script started executing at: $(date)"
 
-mkdir -p $log_folder
  
  validate() {
    if [ $1 -ne 0 ]; then
