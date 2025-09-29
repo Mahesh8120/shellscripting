@@ -17,7 +17,7 @@ if [ $userid -ne 0 ]; then
 else 
     echo -e $g"running as root"$n
 fi
-echo "script started executing at: $(date)"
+echo "script started executing at: $(date)" | tea -a $LOG_FILE
 
  validate() {
    if [ $1 -ne 0 ]; then
@@ -32,7 +32,7 @@ if [ $? -ne 0 ]; then
    dnf install nginx -y &>>$LOG_FILE
    validate $? nginx
 else 
-   echo -e $y"nginx already installed"$n
+   echo -e $y"nginx already installed"$n | tea -a $LOG_FILE
 fi
 
 dnf list installed mysql &>>$LOG_FILE
@@ -40,5 +40,5 @@ if [ $? -ne 0 ]; then
   dnf install mysql -y &>>$LOG_FILE
   validate $? mysql
 else 
-   echo -e $y"nginx already installed"$n
+   echo -e $y"nginx already installed"$n | tea -a $LOG_FILE
 fi
