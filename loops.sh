@@ -27,7 +27,7 @@ echo "script started executing at: $(date)" | tee -a $LOG_FILE
    fi 
  }
 
-for $package in $@
+for package in $@
 do
   dnf list installed $package &>>$LOG_FILE
   if [ $? -ne 0 ]; then 
