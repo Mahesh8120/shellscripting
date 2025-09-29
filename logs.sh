@@ -28,9 +28,9 @@ mkdir -p $log_folder
      echo -e $g"$2 installed"$n
    fi 
  }
-dnf list installed nginx
+dnf list installed nginx 
 if [ $? -ne 0 ]; then 
-   dnf install nginx -y
+   dnf install nginx -y &>> $log_file
    validate $? nginx
 else 
    echo -e $y"nginx already installed"$n
@@ -38,7 +38,7 @@ fi
 
 dnf list installed mysql
 if [ $? -ne 0 ]; then 
-  dnf install mysql -y
+  dnf install mysql -y &>> $log_file
   validate $? mysql
 else 
    echo -e $y"nginx already installed"$n
