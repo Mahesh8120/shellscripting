@@ -36,4 +36,4 @@ do
   else 
      echo -e $y"$package already installed"$n | tee -a $LOG_FILE
   fi  
-done
+done  
